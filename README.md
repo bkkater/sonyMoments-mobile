@@ -23,13 +23,9 @@
 - [Eduarda](https://www.linkedin.com/in/eduarda-barboza-tavares-612a55159/)
 - [Rodrigo](https://www.linkedin.com/in/rodrigo-de-ara%C3%BAjo-tem%C3%B3teo-42020317/)
 
-#### **Descrição**
-
-
 
 #### **Solução**
-
-
+Pensando em resolver o problema apresentado no desafio do Hackathon Code Stage, nosso time contruiu o Sony Moments, um aplicativo que permite que o usuário faça o upload de uma foto e paça para a inteligência artificial de nosso serviço analisar e retornar 4 indicações de músicas atreladas a foto.
 
 # :bulb: **Tecnologias**
 
