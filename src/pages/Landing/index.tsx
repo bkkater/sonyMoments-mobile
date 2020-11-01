@@ -19,7 +19,7 @@ function Landing() {
 
     return (
         <View style={{ flex: 1 }}>
-            <ImageBackground source={background} style={{ flex: 1, justifyContent: "space-around" }}>
+            <ImageBackground source={background} style={{ flex: 1, justifyContent: "space-around"}}>
 
                 <View style={{ paddingVertical: 10, paddingHorizontal: 20, justifyContent: 'space-around', flex: 1 }}>
                     <View>
