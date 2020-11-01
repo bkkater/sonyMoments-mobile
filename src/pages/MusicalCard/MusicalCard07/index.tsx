@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, Image, Platform, AsyncStorage  } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
@@ -8,13 +8,39 @@ import PrimaryButton from '../../../components/PrimaryButton';
 
 import illustration from '../../../../assets/illustration02.png'
 import { RectButton } from 'react-native-gesture-handler';
+import * as ImagePicker from 'expo-image-picker';
 
 const MusicalCard07: React.FC = () => {
     const { goBack, navigate } = useNavigation();
+    
+    useEffect(() => {
+        (async () => {
+            if (Platform.OS !== 'web') {
+                const { status } = await ImagePicker.requestCameraRollPermissionsAsync();
+                if (status !== 'granted') {
+                    alert('Sorry, we need camera roll permissions to make this work!');
+                }
+            }
+        })();
+    }, []);
 
-    const handleNavigateToNextCard = () => {
-        navigate('MusicalCard02')
-    }
+    const pickImage = async () => {
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+        });
+
+        navigate('Playlist')
+
+        if (!result.cancelled) {
+            await AsyncStorage.setItem(
+                'image', result.uri
+            );
+        }
+    };
+    
     return (
         <View style={{ backgroundColor: '#331832', padding: 20, flex: 1 }}>
             <Header />
@@ -33,7 +59,7 @@ const MusicalCard07: React.FC = () => {
 
                     <Image source={illustration} style={{ alignSelf: 'center' }} />
 
-                    <PrimaryButton label='Galeria' onPress={handleNavigateToNextCard} styleButton={{ backgroundColor: '#331832' }} />
+                    <PrimaryButton label='Galeria' onPress={pickImage} styleButton={{ backgroundColor: '#331832' }} />
 
                 </View>
             </View>

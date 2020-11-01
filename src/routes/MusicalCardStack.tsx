@@ -10,6 +10,7 @@ import MusicalCard05 from '../pages/MusicalCard/MusicalCard05';
 import MusicalCard06 from '../pages/MusicalCard/MusicalCard06';
 import MusicalCard07 from '../pages/MusicalCard/MusicalCard07';
 import Playlist from '../pages/Playlist';
+import Share from '../pages/Share';
 
 
 
@@ -27,6 +28,9 @@ function MusicalCardStack() {
             <Screen name='MusicalCard07' component={MusicalCard07} />
 
             <Screen name='Playlist' component={Playlist} />
+
+            <Screen name='Share' component={Share} />
+
 
 
 
