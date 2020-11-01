@@ -30,8 +30,6 @@
 #### **Solução**
 
 
-### Mobile Screenshot
-  <img src="./.github/mockup.png" width="300">
 
 # :bulb: **Tecnologias**
 
