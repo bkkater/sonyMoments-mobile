@@ -22,10 +22,9 @@ const Input: React.FC<InputProps> = ({ label, mockValue, type, keyboardtype, max
             label={label}
             theme={colors.primary === "#fff"}
             value={mockValue || value}
-            underlineColorAndroid="#fefe"
-            onChangeText={value => setValue(value)}
-            style={[{ backgroundColor: colors.text + "00", marginBottom: 20 }, style]}
-            underlineColor='#B66604'
+            onChangeText={(value: React.SetStateAction<string>) => setValue(value)}
+            style={[{ backgroundColor: colors.text + "00", marginBottom: 20, color: '#fff' }, style]}
+            underlineColor='#FFF'
             textContentType={type}
             keyboardType={keyboardtype}
             secureTextEntry={type == 'password' ? true : false}
