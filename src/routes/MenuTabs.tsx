@@ -4,8 +4,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
 
 import Home from '../pages/Home';
-import MusicalCard01 from '../pages/MusicalCard/MusicalCard01';
 import MusicalCardStack from './MusicalCardStack';
+import Meet from '../pages/Meet';
+import MeetStack from './MeetStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -60,10 +61,10 @@ export default function MenuTabs() {
                     }
                 }} />
             <Tab.Screen
-                name="Ajustes"
-                component={Home}
+                name="MeetStack"
+                component={MeetStack}
                 options={{
-                    tabBarLabel: 'Ajustes',
+                    tabBarLabel: 'MeetStack',
                     tabBarIcon: ({ color, size, focused }) => {
                         return (
                             <Feather name="users" size={30} color={focused ? '#901193' : '#87838E'} style={{marginTop: 15}}/>
